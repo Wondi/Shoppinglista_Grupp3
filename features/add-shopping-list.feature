@@ -11,11 +11,11 @@ Feature: Create 1 or more shopping lists.
   			  And it should be stored in a list of all shopping-lists.
 
 
-		Scenario Outline: A user should be able to create their shopping list.
-			  Given that I want to create a shopping list
+		Scenario Outline: A user should be able to create their shopping lists.
+			  Given that I want to create several shopping lists
 			  When I create a new shopping list 
   			  And I add the <nameList> of the shopping list
-			  Then I should get an empty  list with the name <nameList>.
+			  Then I should get an empty list with the name <nameList>.
 
 		Scenario: A user should not be able to add unnamed shopping list
 			  Given that I want  to create a shopping list
