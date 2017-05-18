@@ -9,8 +9,11 @@ module.exports = class AppGroceryLists {
 		this.groceryLists = [];
 	}
 
-	addGroceryList(){
-
+	addGroceryList(listName){
+		if (listName instanceof GroceryList){
+			this.groceryLists.push(listName);	
+		}
+		return this.groceryLists;
 	}
 
 	deleteGroceryList(){
