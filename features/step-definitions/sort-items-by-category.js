@@ -5,7 +5,6 @@ let GroceryListItem = require('../../grocery-list-item.js');
 
 defineSupportCode(function({Given, When, Then}) {
 	let groceryList;
-	let groceryListItem = new GroceryListItem('Banan',12,'Frukt');
 	let sortedList;
 
 	Given('that I have a shopping list with items', function (callback) {
@@ -48,9 +47,6 @@ defineSupportCode(function({Given, When, Then}) {
          		assert(false);
          	}
          }
-		 
-
-
          callback();
     });
 
