@@ -16,7 +16,7 @@ defineSupportCode(function({Given, When, Then}) {
 
 	When('I create a new shopping list with a name', function (callback) {
 		// We expect addGroceryList to return a grocery list
-        groceryList = appList.addGroceryList("Fredag");
+        groceryList = appList.addGroceryList('Fredag');
         callback();
     });
 	
@@ -26,7 +26,7 @@ defineSupportCode(function({Given, When, Then}) {
     });
 
   	Then('it should have the name that I gave it.', function (callback) {
-        assert(groceryList.name === "Fredag");
+        assert(groceryList.name === 'Fredag');
         callback();
     });
 
