@@ -69,7 +69,33 @@ module.exports = class GroceryList {
 
   sortItemsByCategory(){
     let sortedList = []; 
-    sortedList = sortBy(items, { prop: "category" });
+    //slice() keeps the original list the same without 
+    //changing the order of the items
+    sortedList = this.items.slice().sort(function(a,b){
+      // if category is the same for both items
+      // sort after name
+      if(a.category === b.category){
+        return a.name > b.name ? 1 : -1;
+      }
+      // sort after category
+      return a.category > b.category ? 1 : -1;
+    });
+    return sortedList;
+  }
+
+  sortItemsByName(){
+    let sortedList = []; 
+    //slice() keeps the original list the same without 
+    //changing the order of the items
+    sortedList = this.items.slice().sort(function(a,b){
+      // if item name is the same for both items
+      // sort after category
+      if(a.name === b.name){
+        return a.category > b.category ? 1 : -1;
+      }
+      // sort after name
+      return a.name > b.name ? 1 : -1;
+    });
     return sortedList;
   }  
 }
