@@ -67,7 +67,11 @@ module.exports = class GroceryList {
     return unbought;
   }
 
-  sortItems(){
-    let sorted = [];
-  }
+  sortItemsByCategory(){
+    let sortedList = []; 
+    sortedList = sortBy(items, { prop: "category" });
+    return sortedList;
+  }  
 }
+
+
