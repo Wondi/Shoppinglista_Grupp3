@@ -6,7 +6,7 @@ Feature: Adding items to the grocery-list
 	Scenario: A user should not be able to add unnamed items
 		Given that I have an empty grocery list
 		When I try to add an item without a name
-		Then I shouldd get a runtime error.
+		Then I should get a runtime error.
 
 	Scenario Outline: Adding an item to an empty grocery list
 		Given that I have an empty grocery list
