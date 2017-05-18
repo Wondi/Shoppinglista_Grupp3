@@ -1,0 +1,14 @@
+{
+  "name": "shoppinglista_grupp3",
+  "version": "1.0.0",
+  "description": "A group project about test automation.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wondi,Tatiana, Sasa, Daniel,Vivi",
+  "license": "MIT",
+  "dependencies": {
+    "cucumber": "^2.0.0-rc.9"
+  }
+}
