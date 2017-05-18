@@ -9,19 +9,21 @@ defineSupportCode(function({Given, When, Then}) {
 	let appList = new AppGroceryLists();
 	let groceryList;
 
-	Given('that I want to create a shopping list', function (callback) {
+	  Given('that I want to create a shopping list', function (callback) {
        //No special action needed
        callback();
     });
 
-	When('I create a new shopping list with a name', function (callback) {
+	  When('I create a new shopping list with a name', function (callback) {
 		// We expect addGroceryList to return a grocery list
-        groceryList = appList.addGroceryList('Fredag');
+        groceryList = new GroceryList('Fredag');
+        appList.addGroceryList(groceryList);
         callback();
     });
 	
     Then('I should get an empty list.', function (callback) {
-        assert(groceryList instanceof GroceryList);
+        assert(appList.groceryLists[0] instanceof GroceryList);
+        assert(appList.groceryLists[0].items.length === 0);
         callback();
     });
 

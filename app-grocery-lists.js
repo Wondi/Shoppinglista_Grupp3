@@ -1,6 +1,6 @@
 // Import GroceryList
 // so that it can be used in this file
-let GroceryList = require('./grocery-list');
+let GroceryList = require('./grocery-list.js');
 
 // Export the class GroceryList as a node module
 module.exports = class AppGroceryLists {
@@ -11,7 +11,7 @@ module.exports = class AppGroceryLists {
 
 	addGroceryList(listName){
 		if (listName instanceof GroceryList){
-			this.groceryLists.push(listName);	
+			this.groceryLists.push(listName);
 		}
 		return this.groceryLists;
 	}
