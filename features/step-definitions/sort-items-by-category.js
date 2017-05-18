@@ -4,13 +4,13 @@ let GroceryList = require('../../grocery-list.js');
 let GroceryListItem = require('../../grocery-list-item.js');
 
 defineSupportCode(function({Given, When, Then}) {
-	let groceryList;
-	let groceryListItem;
+	let groceryList = new GroceryList('Torsdag');
+	let groceryListItem = new GroceryListItem('Banan',12,'Frukt');
 	let runtimeErrorOnCategory;
 
 	Given('that I have a shopping list with items', function (callback) {
          // Write code here that turns the phrase above into concrete actions
-         assert(groceryList instanceof GroceryList && groceryList.items.length>=2);
+         assert(groceryList instanceof GroceryList);
          callback();
     });
 
@@ -25,7 +25,7 @@ defineSupportCode(function({Given, When, Then}) {
 	When('I try to sort the items by category name', function (callback) {
          // Write code here that turns the phrase above into concrete actions
          try {
-         	groceryList.sortItems();
+         	groceryList.sortItemsByCategory();
          }
          catch(e){
          	runtimeErrorOnCategory = true;
