@@ -97,7 +97,18 @@ module.exports = class GroceryList {
       return a.name > b.name ? 1 : -1;
     });
     return sortedList;
-  }  
+  } 
+
+  deleteItemFromList(itemName){
+    if(typeof itemName !== "string" || itemName === ""){
+      throw new Error("An item must have a name that is an non-empty string.");
+    }
+    for(let item of this.items){
+      if(item.name === itemName){
+        this.items.splice(this.items.indexOf(item),1);
+      }
+    }
+    
 }
 
 
