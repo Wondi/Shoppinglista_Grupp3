@@ -7,7 +7,7 @@ let AppGroceryLists = require('../../app-grocery-lists.js');
 defineSupportCode(function({Given, When, Then}) {
 
 	let appList = new AppGroceryLists();
-	let groceryList;
+	let groceryList, runtimeErrorOnNoNameList;
 
 	  Given('that I want to create a shopping list', function (callback) {
        //No special action needed
@@ -37,6 +37,27 @@ defineSupportCode(function({Given, When, Then}) {
        assert(appList.groceryLists[appList.groceryLists.length-1] === groceryList);
        callback();
     });
+
+    Given('that I want to create an unnamed shopping list', function (callback) {
+         runtimeErrorOnNoNameList = false;
+         callback();
+       });
+
+    When('I try to create a shopping list without a name', function (callback) {
+        try{
+            groceryList = new GroceryList();
+        }
+        catch(e){
+          runtimeErrorOnNoNameList = true;
+        }
+        callback();
+    });
+
+    Then('I should get a runtime error prevented addition an unnamed shopping list.', function (callback) {
+         assert(runtimeErrorOnNoNameList);
+         callback();
+       });
+
 
 });
 

@@ -108,7 +108,7 @@ module.exports = class GroceryList {
         this.items.splice(this.items.indexOf(item),1);
       }
     }
-    
-}
+  }
 
+}
 
