@@ -69,7 +69,16 @@ module.exports = class GroceryList {
 
   sortItemsByCategory(){
     let sortedList = []; 
-    sortedList = sortBy(items, { prop: "category" });
+    //slice() keeps the original list untackt
+    sortedList = this.items.slice().sort(function(a,b){
+      // if category is the same for both items
+      // sort after name
+      if(a.category === b.category){
+        return a.name > b.name ? 1 : -1;
+      }
+      // sort after category
+      return a.category > b.category ? 1 : -1;
+    });
     return sortedList;
   }  
 }
