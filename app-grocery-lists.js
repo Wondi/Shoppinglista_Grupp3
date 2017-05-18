@@ -13,6 +13,7 @@ module.exports = class AppGroceryLists {
 		if (listName instanceof GroceryList){
 			this.groceryLists.push(listName);	
 		}
+		return this.groceryLists;
 	}
 
 	deleteGroceryList(){
