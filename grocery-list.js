@@ -67,4 +67,7 @@ module.exports = class GroceryList {
     return unbought;
   }
 
+  sortItems(){
+    let sorted = [];
+  }
 }
