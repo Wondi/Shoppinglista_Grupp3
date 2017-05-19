@@ -26,45 +26,14 @@ defineSupportCode(function({Given, When, Then}) {
 	Then('I should get a runtime error.', function (callback) {
          assert(runtimeErrorOnNoName);
          callback();
-       });
+  });
 
-	When('I try to add an item without a quantity', function (callback) {
-      	try{
-			theList.addToList('Orange');
-      	}
-      	catch(e){
-      		runtimeErrorOnNoQuantity = true;
-
-      	}
-        callback();
-    });
-
-	Then('I should get a runtime error.', function (callback) {
-         assert(runtimeErrorOnNoQuantity);
-         callback();
-       });
-	
-    When('I try to add an item without a category', function (callback) {
-    	 try {
-         	theList.addToList('Orange', 5, "");
-         }
-         catch(e){
-         	runtimeErrorOnNoCategory = true;
-         }    
-         callback();
-       });
-
-	Then('I should get a runtime error', function (callback) {
-		assert(runtimeErrorOnNoCategory);
-        callback();
-       });
-
-    When('I add {int} item to the list', function (int, callback) {
+  When('I add {int} item to the list', function (int, callback) {
   		for (let i = 0; i < int; i++) {
   			theList.addToList('Banan'+ i, 6, 'Frukt');
   		}
   		
-		callback();
+  		callback();
 	});
 
 	Then('I should have {int} item in my grocery list.', function (int, callback) {
@@ -77,7 +46,7 @@ defineSupportCode(function({Given, When, Then}) {
 	 		assert(theList.items[0] instanceof GroceryListItem);
 		}
  	    callback();
-    });
+  });
 
 
 });

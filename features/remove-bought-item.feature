@@ -7,3 +7,5 @@ Feature: Removing items that are marked as bought from my shopping list.
 			Given that I have a shopping list with items that are marked as bought
 			When I try to remove an item that is marked as bought from the list 
 			Then I should have a list without the removed item. 
+
+
