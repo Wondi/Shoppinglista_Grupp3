@@ -6,4 +6,4 @@ Feature: Removing items that are marked as unbought from my shopping list.
 	Scenario: A user should be able to remove unbought items.
 		Given that I have an shopping list in which some items are marked as unbought
 		When I try to remove an item that is marked as unbought from the list 
-		Then I should have a list without the removed item. 
+		Then I should have a list without the unbought removed item. 

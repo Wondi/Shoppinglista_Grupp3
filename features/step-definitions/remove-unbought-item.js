@@ -33,7 +33,7 @@ defineSupportCode(function({Given, When, Then}) {
          callback();
     });
 
-    Then('I should have a list without the removed item.', function (callback) {
+    Then('I should have a list without the unbought removed item.', function (callback) {
          // Write code here that turns the phrase above into concrete actions
          
          for(let item of dgroceryList.items){
