@@ -6,31 +6,24 @@ let AppGroceryLists = require('../../app-grocery-lists.js');
 
 defineSupportCode(function({Given, When, Then}) {
 
-	let theList, runtimeErrorOnNolist, groceryList
+	let theList, runtimeErrorOnNolist, groceryListDeleted
 
  	 Given('that I have a saved shopping list', function (callback) {
-        theList = new AppGroceryLists('Fredagsmys');
+        theList = new AppGroceryLists();
+        theList.addGroceryList('Fredagsmys');
         
          callback();
 
        });
 
- 		When('I delete the shopping list from database', function (callback) {
+ 		When('I delete the shopping list from list of all shopping-lists', function (callback) {
          	theList.deleteGroceryList('Fredagsmys');
          callback();
        
        });
 
- 		 Then('that particular shopping list should be deleted from the database', function (callback) {
-         
+ 		 Then('that particular shopping list should be deleted from list of all shopping-lists.', function (callback) {
+         assert(theList.groceryLists.length === 0);
          callback();
-       
-       });
-
- 		 Then('I should be able to get a confirmation message about it.', function (callback) {
-         // Write code here that turns the phrase above into concrete actions
-         
-         callback();
-       
        });
 });

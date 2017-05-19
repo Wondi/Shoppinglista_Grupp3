@@ -6,6 +6,6 @@ Feature: Delete a shopping list.
 		Scenario:
 			As a user I should be able to delete a saved shopping list.
 			Given that I have a saved shopping list
-			When I delete the shopping list from database
-			Then that particular shopping list should be deleted from the database
-			And I should be able to get a confirmation message about it.
+			When I delete the shopping list from list of all shopping-lists
+			Then that particular shopping list should be deleted from list of all shopping-lists.
+			

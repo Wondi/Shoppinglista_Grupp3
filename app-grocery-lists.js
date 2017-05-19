@@ -16,8 +16,11 @@ module.exports = class AppGroceryLists {
 		return this.groceryLists;
 	}
 
-	deleteGroceryList(){
-
+	deleteGroceryList(listName){
+		if (listName instanceof GroceryList){
+			this.groceryLists.pop(listName);
+		}
+		return this.groceryLists;
 	}
 
 }
