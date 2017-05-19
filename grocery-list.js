@@ -31,6 +31,7 @@ module.exports = class GroceryList {
   }
 
   buy(itemName){
+    //Mark the item as bought
     if(typeof itemName !== "string" || itemName === ""){
       throw new Error("An item must have a name that is an non-empty string.");
     }
