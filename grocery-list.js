@@ -110,6 +110,7 @@ module.exports = class GroceryList {
       }
     }
   }
-
+    
 }
+
 
