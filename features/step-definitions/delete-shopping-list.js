@@ -9,14 +9,14 @@ defineSupportCode(function({Given, When, Then}) {
 	let theList, runtimeErrorOnNolist, groceryList
 
  	 Given('that I have a saved shopping list', function (callback) {
-         theList = new AppGroceryLists('Fredagsmys');
-         theList.
+        theList = new AppGroceryLists('Fredagsmys');
+        
          callback();
 
        });
 
  		When('I delete the shopping list from database', function (callback) {
-         
+         	theList.deleteGroceryList('Fredagsmys');
          callback();
        
        });
@@ -33,4 +33,4 @@ defineSupportCode(function({Given, When, Then}) {
          callback();
        
        });
-}
+});
