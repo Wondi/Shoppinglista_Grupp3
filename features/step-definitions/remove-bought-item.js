@@ -20,9 +20,18 @@ defineSupportCode(function({Given, When, Then}) {
        });
 
 	When('I try to remove an item that is marked as bought from the list', function (callback) {
-		    if (boughtItemsList.length > 0){
+		    /*if (boughtItemsList.length > 0){
           for (let item of boughtItemsList){
             myList.deleteItemFromList(item.name);
+          }
+        }*/
+
+        if (boughtItemsList.length > 0){
+          for (let i = myList.items.length - 1; i >= 0; i--){
+            let item = myList.items[i];
+            if(item.bought){
+              myList.deleteItemFromList(item.name);
+            }
           }
         }
 
