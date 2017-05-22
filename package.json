@@ -10,5 +10,14 @@
   "license": "MIT",
   "dependencies": {
     "cucumber": "^2.0.0-rc.9"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wondi/Shoppinglista_Grupp3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Wondi/Shoppinglista_Grupp3/issues"
+  },
+  "homepage": "https://github.com/Wondi/Shoppinglista_Grupp3#readme"
 }
