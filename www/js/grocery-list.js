@@ -3,7 +3,7 @@
 let GroceryListItem = require('./grocery-list-item');
 
 // Export the class GroceryList as a node module
-module.exports = class GroceryList {
+class GroceryList {
 
   // When a new GroceryList is created
   // set the properties name (from inargument)
@@ -111,6 +111,10 @@ module.exports = class GroceryList {
     }
   }
     
+}
+
+if(typeof module !== 'undefined'){
+  module.exports = GroceryList;
 }
 
 

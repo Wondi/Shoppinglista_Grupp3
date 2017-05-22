@@ -1,4 +1,4 @@
-module.exports = class GroceryListItem {
+class GroceryListItem {
 
   constructor(name, quantity, category){
      if(typeof name !== "string" || name === ""){
@@ -18,4 +18,8 @@ module.exports = class GroceryListItem {
    
   }
 
+}
+
+if(typeof module !== 'undefined'){
+  module.exports = GroceryListItem;
 }

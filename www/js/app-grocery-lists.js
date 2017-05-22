@@ -3,7 +3,7 @@
 let GroceryList = require('./grocery-list.js');
 
 // Export the class GroceryList as a node module
-module.exports = class AppGroceryLists {
+class AppGroceryLists {
 
 	constructor(){
 		this.groceryLists = [];
@@ -23,4 +23,8 @@ module.exports = class AppGroceryLists {
 		return this.groceryLists;
 	}
 
+}
+
+if(typeof module !== 'undefined'){
+  module.exports = AppGroceryLists;
 }
