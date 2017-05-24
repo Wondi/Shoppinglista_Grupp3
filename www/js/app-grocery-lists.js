@@ -1,6 +1,8 @@
 // Import GroceryList
 // so that it can be used in this file
-let GroceryList = require('./grocery-list.js');
+if(typeof module !== 'undefined'){
+  GroceryList = require('./grocery-list.js');
+}
 
 // Export the class GroceryList as a node module
 class AppGroceryLists {

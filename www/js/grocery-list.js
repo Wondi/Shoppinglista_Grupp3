@@ -1,6 +1,8 @@
 // Import GroceryListItem
 // so that it can be used in this file
-let GroceryListItem = require('./grocery-list-item');
+if(typeof module !== 'undefined'){
+  GroceryListItem = require('./grocery-list-item');
+}
 
 // Export the class GroceryList as a node module
 class GroceryList {
@@ -109,6 +111,33 @@ class GroceryList {
         this.items.splice(this.items.indexOf(item),1);
       }
     }
+  }
+
+  showAllItems(){
+    let that = this;
+    $("#allItems tbody").empty();
+    for(let item of this.items ){
+      $('#allItems tbody').append(
+          '<tr>' +
+          '<td>' + item.name + '</td>' +
+          '<td>' + item.quantity + '</td>' +
+          '<td>' + item.category + '</td>' +
+          '<td>' + item.bought +'</td>' +
+          '<td><button class="btn btn-danger deleteItem">Delete</button></td>' +
+          '</tr>'
+      );
+    }
+    $('#allItems .deleteItem').click(function(){
+      console.log("Delete what item?");
+      // remember for this to work after sort
+      // stop slicing the sort - resort original!
+      let thisTr = $(this).closest('tr');
+      // what position does the tr have?
+      let index = $('tr').index(thisTr) - 1;
+      console.log(index)
+      that.items.splice(index,1);
+      that.showAllItems();
+    });
   }
     
 }
