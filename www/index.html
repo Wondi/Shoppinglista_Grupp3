@@ -40,6 +40,7 @@
           <li><a href="#start">Homepage</a> </li>
           <li><a href="#create_new_shopping_list">New shopping list</a> </li>
           <li><a href="#all_list">All lists</a> </li>
+          <li><a href="#allItems">All Items</a> </li>
         </ul>
       </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -98,6 +99,37 @@
     <div id="create_new_shopping_list" class="page"><!-- start of Create List page-->
       <h3>Sasa</h3>
     </div>
+
+    <div id="allItems" class="page"><!--start of All Items page-->
+      <div class="table_items">
+        <h2 align="center">All items of list: </h1>
+        <table class="table table-striped table-hover ">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Quantity</th>
+              <th>Category</th>
+              <th>Bought/Unbought</th>
+              <th>Delete</th>         
+            </tr>
+          </thead>
+          <tbody> 
+          </tbody>
+        </table>
+      </div>      
+      <div class = "row"> 
+        <div class="col-md-8"> 
+          <a href="#" class="btn btn-primary">Sort by Name</a>    
+          <a href="#" class="btn btn-primary">Sort by Category</a>
+          <a href="#" class="btn btn-primary">See only Bought items</a>
+          <a href="#" class="btn btn-primary">See only Unbought items</a>
+        </div>
+        <div class="col-md-4">
+          <a href="#" class="btn btn-primary">New item</a>
+        </div>
+      </div>
+      
+    </div><!--end of All Items page-->
 
 
   </main>
