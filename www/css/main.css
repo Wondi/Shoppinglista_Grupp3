@@ -54,6 +54,10 @@ h3 {
       justify-content: center;
  }
  
+.create-btn{
+  margin-top: 24px;
+}
+
  #btn-reset {
      visibility: hidden;
 }
