@@ -45,11 +45,8 @@
           <li><a href="#start">Homepage</a> </li>
           <li><a href="#create_new_shopping_list">New shopping list</a> </li>
           <li><a href="#all_list">All lists</a> </li>
-<<<<<<< HEAD
           <li><a href="#add_item">Add item</a></li>
-=======
           <li><a href="#allItems">All Items</a> </li>
->>>>>>> 2851cf6c95b118496c74cc0b02846792867ae0db
         </ul>
       </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -148,6 +145,11 @@
     </div>  
     <!--end of WF5 "See all lists"-->
     <div id="add_item" class="page">
+        <a href="#create_new_shopping_list" class="btn btn-primary create-btn">Create</a>
+
+    </div> <!-- end of create list page -->
+
+    <div id="add_item" class="page"><!-- start of add item page -->
       <div class="col-md-6">
         <div class="form-group">
           <label for="item_name">Item name:</label>
@@ -186,9 +188,15 @@
         <div class="container">          
           <button type="button" class="btn btn-primary create-btn" onclick="  ">Create List</button>
           <button type="button" class="btn btn-primary view_list-btn" onclick=" ">View All Lists</button>
-        </div>    
+        </div>         
         
       </div>
+      <div class="col-md-6">
+          <div class="grocery_list">
+            <img class="img-responsive" src="imgs/shopping-list-img3.jpg" >
+          </div>
+      </div>  
+    </div>  
     <div id="allItems" class="page"><!--start of All Items page-->
       <div class="table_items">
         <h2 align="center">All items of list: </h1>
@@ -216,17 +224,12 @@
         <div class="col-md-4">
           <a href="#" class="btn btn-primary">New item</a>
         </div>
-      </div>
-      
+      </div>      
     </div><!--end of All Items page-->
+    
 
 
-
-      <div class="col-md-6">
-          <div class="grocery_list">
-            <img class="img-responsive" src="imgs/shopping-list-img3.jpg" >
-          </div>
-      </div>
+      
 
       
     </div>
