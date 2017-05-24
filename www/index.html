@@ -15,8 +15,13 @@
   <script src="js/jquery.js"></script>
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <!-- My own JS -->
+  <script src="js/grocery-list-item.js"></script>
+  <script src="js/grocery-list.js"></script>
+  <script src="js/app-grocery-lists.js"></script>
   <script src="js/navigation.js"></script>  
-  <script src="js/main.js"></script> 
+  <script src="js/main.js"></script>
+  <script src="js/entry-point.js"></script>
+
   <!-- Don't allow scaling on mobile devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
@@ -40,6 +45,11 @@
           <li><a href="#start">Homepage</a> </li>
           <li><a href="#create_new_shopping_list">New shopping list</a> </li>
           <li><a href="#all_list">All lists</a> </li>
+<<<<<<< HEAD
+          <li><a href="#add_item">Add item</a></li>
+=======
+          <li><a href="#allItems">All Items</a> </li>
+>>>>>>> 2851cf6c95b118496c74cc0b02846792867ae0db
         </ul>
       </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -96,7 +106,13 @@
     </div><!--end of startpage-->
 
     <div id="create_new_shopping_list" class="page"><!-- start of Create List page-->
-      <h3>Sasa</h3>
+        <div class="col-md-8">
+        <div class="form-group">
+          <label for="list_name">List name:</label>
+          <input type="text" class="form-control" id="list_name">
+        </div> 
+        </div>
+        <a href="#create_new_shopping_list" class="btn btn-primary create-btn" onclick = "readContactForm();" >Create</a>
     </div>
 
     <!--Start of WF5 "See all lists"-->
@@ -131,6 +147,89 @@
 
     </div>  
     <!--end of WF5 "See all lists"-->
+    <div id="add_item" class="page">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="item_name">Item name:</label>
+          <input type="text" class="form-control" id="item_name">        
+        </div>  
+               
+        <div class="form-group">
+          <label for="quantity">Quantuty:</label>
+          <input type="text" class="form-control" id="quantity">
+        </div>
+
+        <div class="form-group">
+          <label for="category">Category:</label>
+          <select class="form-control" id="category">
+            <option>Bageri</option>
+            <option>Barn</option>
+            <option>Blommor</option>
+            <option>Drycker</option>
+            <option>Fisk & Skaldjur</option>
+            <option>Frukt & Grönt</option>
+            <option>Fryst</option>
+            <option>Färdig Mat</option>
+            <option>Godis & Snacks</option>
+            <option>Hem & Trädgård</option>
+            <option>Hem & Apotek</option>
+            <option>Husdjur</option>
+            <option>Kött & Chark</option>
+            <option>Mejeri & Ägg</option>
+            <option>Skafferi</option>
+            <option>Skönhet & Hygien</option>
+            <option>Övriga</option>
+
+          </select>
+        </div>
+        <p></p>
+        <div class="container">          
+          <button type="button" class="btn btn-primary create-btn" onclick="  ">Create List</button>
+          <button type="button" class="btn btn-primary view_list-btn" onclick=" ">View All Lists</button>
+        </div>    
+        
+      </div>
+    <div id="allItems" class="page"><!--start of All Items page-->
+      <div class="table_items">
+        <h2 align="center">All items of list: </h1>
+        <table class="table table-striped table-hover ">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Quantity</th>
+              <th>Category</th>
+              <th>Bought/Unbought</th>
+              <th>Delete</th>         
+            </tr>
+          </thead>
+          <tbody> 
+          </tbody>
+        </table>
+      </div>      
+      <div class = "row"> 
+        <div class="col-md-8"> 
+          <a href="#" class="btn btn-primary">Sort by Name</a>    
+          <a href="#" class="btn btn-primary">Sort by Category</a>
+          <a href="#" class="btn btn-primary">See only Bought items</a>
+          <a href="#" class="btn btn-primary">See only Unbought items</a>
+        </div>
+        <div class="col-md-4">
+          <a href="#" class="btn btn-primary">New item</a>
+        </div>
+      </div>
+      
+    </div><!--end of All Items page-->
+
+
+
+      <div class="col-md-6">
+          <div class="grocery_list">
+            <img class="img-responsive" src="imgs/shopping-list-img3.jpg" >
+          </div>
+      </div>
+
+      
+    </div>
   </main>
 
   <footer class="container-fluid bg-primary">
