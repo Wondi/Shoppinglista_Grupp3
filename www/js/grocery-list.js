@@ -131,9 +131,9 @@ class GroceryList {
       console.log("Delete what item?");
       // remember for this to work after sort
       // stop slicing the sort - resort original!
-      let thisTr = $(this).closest('tr');
+      let thisTr = $($(this).closest('tr'));
       // what position does the tr have?
-      let index = $('tr').index(thisTr) - 1;
+      let index = $($('tr').index(thisTr)) - 1;
       console.log(index)
       that.items.splice(index,1);
       that.showAllItems();
@@ -152,12 +152,15 @@ class GroceryList {
       }      
     });
     $('#allItems .sortByName').click(function(){
-      that.sortItemsByName();
-      that.showAllItems();
+      let sortedList = that.sortItemsByName();
+
+      sortedList.showAllItems();
+      console.log(sortedList);
+
     });
 
   }
-    
+  
 }
 
 if(typeof module !== 'undefined'){
