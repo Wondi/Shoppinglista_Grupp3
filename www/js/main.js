@@ -9,5 +9,5 @@ l.addToList("File", 5, "Kött");
 l.buy("Äpplen");
 //wait for DOM
 $(function(){
-  l.showAllItems();
+  l.showAllItems_my();
 })

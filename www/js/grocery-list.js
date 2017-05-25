@@ -153,13 +153,38 @@ class GroceryList {
     });
     $('#allItems .sortByName').click(function(){
       that.sortItemsByName();
+      console.log("sorted: ", that.sortItemsByName());
       that.showAllItems();
     });
 
   }
-    
-}
+  //------- New functions there problem is fixed. Use these as tips, change showAllItems and delete these funcs
+  showAllItems_my(){
+    let that = this;
+    that.showTable(that.items);
+    $('#allItems .sortByName').click(function(){
+     // this = that;
+      console.log("sorted: ", that.sortItemsByName());
+      that.showTable(that.sortItemsByName());
+    });
+  }
 
+  showTable(tblItems) {
+    $("#allItems tbody").empty();
+    for(let item of tblItems){
+      $('#allItems tbody').append(
+          '<tr>' +
+          '<td>' + item.name + '</td>' +
+          '<td>' + item.quantity + '</td>' +
+          '<td>' + item.category + '</td>' +
+          '<td><button class="btn btn-primary changeStatus">'+ item.bought +'</button></td>' +
+          '<td><button class="btn btn-danger deleteItem">Delete</button></td>' +
+          '</tr>'
+      );
+    }    
+  }
+  //----------------------------------------------------------------------------
+}
 if(typeof module !== 'undefined'){
   module.exports = GroceryList;
 }
