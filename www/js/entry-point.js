@@ -6,17 +6,19 @@ $(addStartEvent);
 // readContactForm when the user clicks
 // on something with the class start-btn
 function addStartEvent(){
-  $('.create-btn').click(readContactForm);
+ // $('.create-btn').click(readContactForm);
   $(startCollection);  
 }
 
 let my_collection = new AppGroceryLists();
 
-function readContactForm(){
-	console.log("READ")
-	console.log("READ = ", $('#list_name').val());
-	my_collection.addGroceryList($('#list_name').val());
 
+function readContactForm(){
+//	console.log("READ = ", $('#list_name').val());
+	if ($('#list_name').val() !== ""){
+		let gr_l = new GroceryList($('#list_name').val()); 
+		my_collection.addGroceryList(gr_l);
+	}
 	console.log("my_collection.groceryLists", my_collection.groceryLists);
 }
 
