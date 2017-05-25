@@ -1,7 +1,7 @@
 class GroceryListItem {
 
   constructor(name, quantity, category){
-     if(typeof name !== "string" || name === ""){
+    if(typeof name !== "string" || name === ""){
       throw new Error("A list item must have a name that is an non-empty string.");
     }
     if(typeof quantity !== "number" || quantity === "" || quantity < 0 ){
@@ -15,6 +15,12 @@ class GroceryListItem {
     this.quantity = quantity;
     this.category = category;
     this.bought = false;
+    if(this.bought === false){
+      this.bought = "Unbought";
+    }
+    else{
+      this.bought = "Bought";
+    }
    
   }
 

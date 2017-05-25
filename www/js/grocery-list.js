@@ -122,7 +122,7 @@ class GroceryList {
           '<td>' + item.name + '</td>' +
           '<td>' + item.quantity + '</td>' +
           '<td>' + item.category + '</td>' +
-          '<td>' + item.bought +'</td>' +
+          '<td><button class="btn btn-primary changeStatus">'+ item.bought +'</button></td>' +
           '<td><button class="btn btn-danger deleteItem">Delete</button></td>' +
           '</tr>'
       );
@@ -138,6 +138,24 @@ class GroceryList {
       that.items.splice(index,1);
       that.showAllItems();
     });
+    $('#allItems .changeStatus').click(function(){
+      console.log("Change status?");
+      let thisTr = $(this).closest('tr');
+      // what position does the tr have?
+      let index = $('tr').index(thisTr) - 1;
+      console.log(index)
+      if($(this).text() === "Unbought"){
+
+      }
+      else if($(this).text() === "Bought"){
+        $(this).text("Unbought");
+      }      
+    });
+    $('#allItems .sortByName').click(function(){
+      that.sortItemsByName();
+      that.showAllItems();
+    });
+
   }
     
 }
