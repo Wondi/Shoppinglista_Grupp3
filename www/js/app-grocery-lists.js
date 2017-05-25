@@ -46,7 +46,7 @@ class AppGroceryLists {
 		      that.groceryLists.splice(index,1);
 		      that.viewAllLists();
 		    });
-		}
+		
 	}
 }
 
