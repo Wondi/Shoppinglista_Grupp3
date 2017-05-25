@@ -145,7 +145,7 @@ class GroceryList {
       let index = $('tr').index(thisTr) - 1;
       console.log(index)
       if($(this).text() === "Unbought"){
-
+        $(this).text("Bought");
       }
       else if($(this).text() === "Bought"){
         $(this).text("Unbought");
