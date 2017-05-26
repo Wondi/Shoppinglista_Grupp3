@@ -15,13 +15,7 @@ class GroceryListItem {
     this.quantity = quantity;
     this.category = category;
     this.bought = false;
-    if(this.bought === false){
-      this.bought = "Unbought";
-    }
-    else{
-      this.bought = "Bought";
-    }
-   
+      
   }
 
 }

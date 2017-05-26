@@ -113,7 +113,7 @@ class GroceryList {
     }
   }
 
-  showAllItems(){
+  /*showAllItems(){
     let that = this;
     $("#allItems tbody").empty();
     for(let item of this.items ){
@@ -157,16 +157,53 @@ class GroceryList {
       that.showAllItems();
     });
 
-  }
+  }*/
   //------- New functions there problem is fixed. Use these as tips, change showAllItems and delete these funcs
   showAllItems_my(){
     let that = this;
+    console.log(that.name);
+    
     that.showTable(that.items);
+    $('#allItems .listName').html("List: "+ that.name);
     $('#allItems .sortByName').click(function(){
      // this = that;
       console.log("sorted: ", that.sortItemsByName());
       that.showTable(that.sortItemsByName());
     });
+    $('#allItems .sortByCategory').click(function(){
+     // this = that;
+      console.log("sorted: ", that.sortItemsByCategory());
+      that.showTable(that.sortItemsByCategory());
+    });
+    $('#allItems .onlyBought').click(function(){
+     // this = that;
+      console.log("filtered: ", that.boughtItems());
+      that.showTable(that.boughtItems());
+    });
+    $('#allItems .onlyUnbought').click(function(){
+     // this = that;
+      console.log("filtered: ", that.unboughtItems());
+      that.showTable(that.unboughtItems());
+    });
+    $('#allItems .originalList').click(function(){
+     // this = that;
+      console.log("filtered: ", that.showAllItems_my());
+      that.showAllItems_my();
+    });
+    $('#allItems .newItem').click(function(){
+      window.location.href='#add_item';
+    });
+    /*$('#allItems .deleteItem').click(function(){
+      console.log("Delete what item?");
+      // remember for this to work after sort
+      // stop slicing the sort - resort original!
+      let thisTr = $($(this).closest('tr'));
+      // what position does the tr have?
+      let index = $($('tr').index(thisTr)) - 1;
+      console.log(index)
+      that.items.splice(index,1);
+      that.showAllItems_my();
+    });*/
   }
   
   showTable(tblItems) {
@@ -181,7 +218,7 @@ class GroceryList {
           '<td><button class="btn btn-danger deleteItem">Delete</button></td>' +
           '</tr>'
       );
-    }    
+    }
   }
   //----------------------------------------------------------------------------
 }
