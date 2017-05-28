@@ -207,7 +207,26 @@ class GroceryList {
       that.items.splice(index,1);
       that.showTable(that.items);
     });
-    
+    $('#allItems .changeStatus').click(function(){
+      let thisTr = $($(this).closest('tr'));
+      let index = $($('tr').index(thisTr)) - 1;
+      let indexListArray = index -1;
+      let currentText;
+      let item=that.items[indexListArray];
+      $("#allItems tbody tr td").each(function() {
+          currentText = $(this).text();
+          if(currentText === "Unbought"){
+            $(this).text("Bought");
+            item.bought=true;
+          }
+          else if(currentText === "Bought"){
+            $(this).text("Unbought");
+            item.bought=false;
+          }
+      });
+      console.log("the current text",currentText);
+    });     
+
   }
   
   showTable(tblItems) {
@@ -224,6 +243,8 @@ class GroceryList {
       );
     }
   }
+
+
   //----------------------------------------------------------------------------
 }
 if(typeof module !== 'undefined'){
