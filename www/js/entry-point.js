@@ -37,6 +37,16 @@ function addItemCallback(){
 	}
 	console.log("my_collection.groceryLists 2 :", my_collection.groceryLists);
 }
+function viewAllItemsCallback(){
+	let listName = $("#listNameP").text();
+	if(listName !== "" ){
+		let index = my_collection.indexByName(listName);
+		my_collection.groceryLists[index].showAllItems_my(my_collection.groceryLists[index]);
+	}
+	//$('#allItems').show();
+
+}
+
 function startCollection(){
 	
 }
