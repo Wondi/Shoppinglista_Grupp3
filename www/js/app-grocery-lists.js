@@ -11,16 +11,19 @@ class AppGroceryLists {
 		this.groceryLists = [];
 	}
 
-	addGroceryList(listName){
-		if (listName instanceof GroceryList){
-			this.groceryLists.push(listName);
+	addGroceryList(groceryList){
+		if (groceryList instanceof GroceryList && this.indexByName(groceryList.name) == -1){
+			this.groceryLists.push(groceryList);
+		}
+		else{
+			throw new Error("Invalid grocery list: you try to add the list with the same name as already exist or you try to add non- GroceryList");
 		}
 		return this.groceryLists;
 	}
 
-	deleteGroceryList(listName){
-		if (listName instanceof GroceryList){
-			this.groceryLists.pop(listName);
+	deleteGroceryList(groceryList){
+		if (groceryList instanceof GroceryList){
+			this.groceryLists.pop(groceryList);
 		}
 		return this.groceryLists;
 	}
@@ -38,22 +41,18 @@ class AppGroceryLists {
 	
 	viewAllLists(that){
 	    that.showTable(that.groceryLists);
-		/*    
-		    $('#allLists .deleteList').click(function(){
-		      console.log("Delete what item?");
-		      // remember for this to work after sort
-		      // stop slicing the sort - resort original!
-		      let thisTr = $(this).closest('tr');
-		      // what position does the tr have?
-		      let index = $('tr').index(thisTr) - 1;
-		      console.log(index)
-		      that.groceryLists.splice(index,1);
-		      that.viewAllLists();
-		    }); */
-		
-	}
+		   
+		$('#all_list .deleteList').click(function(){
+		console.log("Delete what item?");
+		let thisTr = $(this).closest('tr');
+		// what position does the tr have?
+		let index = $('tr').index(thisTr) - 1;
+		console.log("index for deleting", index);
+		that.groceryLists.splice(index,1);
+		that.viewAllLists(that);
+		});
 
- //----------------------------------------------------------------------------
+	}
 
   	showTable(tblLists) {
     	$("#all_list tbody").empty();
@@ -66,13 +65,12 @@ class AppGroceryLists {
 	          '<td>' + list.name + '</td>' +
 	          '<td>' + list.totalItems + '</td>' +
 	          '<td>' + list.boughtItems().lenght + '</td>' +
-	          '<td><button class="btn btn-danger deleteItem">Delete</button></td>' +
+	          '<td><button class="btn btn-danger deleteList">Delete</button></td>' +
 	          '</tr>'
       		);
      	 counter++;
     	}
     }
-  //----------------------------------------------------------------------------
 }
 
 
