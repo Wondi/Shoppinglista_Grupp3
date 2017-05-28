@@ -24,6 +24,7 @@ function readListNameCallback(){
 		$(".listNamePanel").html(listName_val)
 	}
 	console.log("my_collection.groceryLists", my_collection.groceryLists);
+	my_collection.viewAllLists(my_collection);
 }
 
 function addItemCallback(){
@@ -36,6 +37,7 @@ function addItemCallback(){
 		my_collection.groceryLists[index].addToList($(item_name).val(), Number($(quantity).val()), $(category).val());
 	}
 	console.log("my_collection.groceryLists 2 :", my_collection.groceryLists);
+	my_collection.viewAllLists(my_collection);
 }
 function viewAllItemsCallback(){
 	let listName = $("#listNameP").text();
@@ -43,10 +45,12 @@ function viewAllItemsCallback(){
 		let index = my_collection.indexByName(listName);
 		my_collection.groceryLists[index].showAllItems_my(my_collection.groceryLists[index]);
 	}
-	//$('#allItems').show();
-
 }
 
+function viewAllListsCallback()
+{
+
+}
 function startCollection(){
 	
 }

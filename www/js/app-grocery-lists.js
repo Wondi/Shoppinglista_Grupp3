@@ -35,17 +35,10 @@ class AppGroceryLists {
 		}
 		return -1;
 	}
-	viewAllLists(){
-		 let that = this;
-		    $("#allLists tbody").empty();
-		    for(let list of this.groceryLists){
-		      $('#allLists tbody').append(
-		          '<tr>' +
-		          '<td>' + list.name + '</td>' +
-		          '<td><button class="btn btn-danger deleteList">Delete</button></td>' +
-		          '</tr>'
-		      );
-		    }
+	
+	viewAllLists(that){
+	    that.showTable(that.groceryLists);
+		/*    
 		    $('#allLists .deleteList').click(function(){
 		      console.log("Delete what item?");
 		      // remember for this to work after sort
@@ -56,10 +49,32 @@ class AppGroceryLists {
 		      console.log(index)
 		      that.groceryLists.splice(index,1);
 		      that.viewAllLists();
-		    });
+		    }); */
 		
 	}
+
+ //----------------------------------------------------------------------------
+
+  	showTable(tblLists) {
+    	$("#all_list tbody").empty();
+    	let counter = 1;
+    	for(let list of tblLists){
+
+     	 $('#all_list tbody').append(
+	          '<tr>' +
+	          '<td>' + counter + '</td>' +
+	          '<td>' + list.name + '</td>' +
+	          '<td>' + list.totalItems + '</td>' +
+	          '<td>' + list.boughtItems().lenght + '</td>' +
+	          '<td><button class="btn btn-danger deleteItem">Delete</button></td>' +
+	          '</tr>'
+      		);
+     	 counter++;
+    	}
+    }
+  //----------------------------------------------------------------------------
 }
+
 
 if(typeof module !== 'undefined'){
   module.exports = AppGroceryLists;

@@ -16,6 +16,7 @@ class GroceryList {
     }
     this.name = name;
     this.items = [];
+    this.totalItems = 0;
   }
 
   addToList(itemName,itemQantity, itemCategory){
@@ -30,6 +31,7 @@ class GroceryList {
     }
     
     this.items.push(new GroceryListItem(itemName, itemQantity, itemCategory));
+    this.totalItems++;
   }
 
   buy(itemName){
