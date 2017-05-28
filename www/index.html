@@ -109,7 +109,7 @@
           <input type="text" class="form-control" id="list_name">
         </div> 
         </div>
-        <a href="#add_item" class="btn btn-primary create-btn" onclick = "readContactForm();" >Create</a>
+        <a href="#add_item" class="btn btn-primary create-btn" onclick = "readListNameCallback($('#list_name').val());" >Create</a>
     </div>
 
     <!--Start of WF5 "See all lists"-->
@@ -147,6 +147,19 @@
   
     <div id="add_item" class="page"><!-- start of add item page -->
       <div class="col-md-6">
+      
+       <div class="panel panel-primary">
+            <div class="panel-heading">
+               <h3 class="panel-title">Add item to list:</h3>
+            </div>
+            <div class="panel-body">
+               <span class="listNamePanel" id="listNameP"></span>               
+            </div>
+        </div>
+        <!--<div class="well">
+          Look, I'm in a well!
+        </div> -->
+
         <div class="form-group">
           <label for="item_name">Item name:</label>
           <input type="text" class="form-control" id="item_name">        
@@ -181,8 +194,8 @@
           </select>
         </div>
         <p></p>
-        <div class="container">          
-          <button type="button" class="btn btn-primary create-btn" onclick="  ">Create List</button>
+        <div class="container">
+          <button type="button" class="btn btn-primary create-btn" onclick="addItemCallback();">Add item</button>
           <button type="button" class="btn btn-primary view_list-btn" onclick=" ">View All Lists</button>
         </div>         
         

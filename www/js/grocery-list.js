@@ -113,7 +113,8 @@ class GroceryList {
     }
   }
 
-  /*showAllItems(){
+/*
+  showAllItems(){
     let that = this;
     $("#allItems tbody").empty();
     for(let item of this.items ){
@@ -157,10 +158,9 @@ class GroceryList {
       that.showAllItems();
     });
 
-  }*/
+  }*/ 
   //------- New functions there problem is fixed. Use these as tips, change showAllItems and delete these funcs
-  showAllItems_my(){
-    let that = this;
+  showAllItems_my(that){
     console.log(that.name);
     
     that.showTable(that.items);
@@ -187,12 +187,25 @@ class GroceryList {
     });
     $('#allItems .originalList').click(function(){
      // this = that;
-      console.log("filtered: ", that.showAllItems_my());
-      that.showAllItems_my();
+      console.log("filtered: ");
+      that.showAllItems_my(that);
     });
     $('#allItems .newItem').click(function(){
       window.location.href='#add_item';
     });
+    //--------------------
+    $('#allItems .deleteItem').click(function(){
+      console.log("Delete what item?");
+      // remember for this to work after sort
+      // stop slicing the sort - resort original!
+      let thisTr = $($(this).closest('tr'));
+      // what position does the tr have?
+      let index = $($('tr').index(thisTr)) - 1;
+      console.log(index)
+      that.items.splice(index,1);
+      that.showTable(that.items);
+    });
+    //--------------------
     /*$('#allItems .deleteItem').click(function(){
       console.log("Delete what item?");
       // remember for this to work after sort

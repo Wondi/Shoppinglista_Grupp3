@@ -10,6 +10,6 @@ l.addToList("File", 5, "kött");
 l.buy("Äpplen");
 //wait for DOM
 $(function(){
-  l.showAllItems_my();
+  l.showAllItems_my(l);
   console.log("lista", l.unboughtItems());
 })

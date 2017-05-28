@@ -24,6 +24,17 @@ class AppGroceryLists {
 		}
 		return this.groceryLists;
 	}
+
+	//function returns the index of list with name listName in the groceryLists array
+	indexByName(listName){
+		console.log("indexby name: listName = ", listName);
+		for(let item in this.groceryLists){
+			if (this.groceryLists[item].name === listName){
+				return item;
+			}
+		}
+		return -1;
+	}
 	viewAllLists(){
 		 let that = this;
 		    $("#allLists tbody").empty();
