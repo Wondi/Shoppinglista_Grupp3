@@ -207,18 +207,7 @@ class GroceryList {
       that.items.splice(index,1);
       that.showTable(that.items);
     });
-    //--------------------
-    /*$('#allItems .deleteItem').click(function(){
-      console.log("Delete what item?");
-      // remember for this to work after sort
-      // stop slicing the sort - resort original!
-      let thisTr = $($(this).closest('tr'));
-      // what position does the tr have?
-      let index = $($('tr').index(thisTr)) - 1;
-      console.log(index)
-      that.items.splice(index,1);
-      that.showAllItems_my();
-    });*/
+    
   }
   
   showTable(tblItems) {
@@ -229,7 +218,7 @@ class GroceryList {
           '<td>' + item.name + '</td>' +
           '<td>' + item.quantity + '</td>' +
           '<td>' + item.category + '</td>' +
-          '<td><button class="btn btn-primary changeStatus">'+ item.bought +'</button></td>' +
+          '<td><button class="btn btn-primary changeStatus">'+ item.showText() +'</button></td>' +
           '<td><button class="btn btn-danger deleteItem">Delete</button></td>' +
           '</tr>'
       );

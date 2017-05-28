@@ -18,6 +18,17 @@ class GroceryListItem {
       
   }
 
+  showText(){
+    let text;
+    if(this.bought===false){
+      text="Unbought";
+    }
+    else{
+      text="Bought";
+    }
+    return text;
+  }
+
 }
 
 if(typeof module !== 'undefined'){
