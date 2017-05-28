@@ -11,16 +11,19 @@ class AppGroceryLists {
 		this.groceryLists = [];
 	}
 
-	addGroceryList(listName){
-		if (listName instanceof GroceryList){
-			this.groceryLists.push(listName);
+	addGroceryList(groceryList){
+		if (groceryList instanceof GroceryList && this.indexByName(groceryList.name) == -1){
+			this.groceryLists.push(groceryList);
+		}
+		else{
+			throw new Error("Invalid grocery list: you try to add the list with the same name as already exist or you try to add non- GroceryList");
 		}
 		return this.groceryLists;
 	}
 
-	deleteGroceryList(listName){
-		if (listName instanceof GroceryList){
-			this.groceryLists.pop(listName);
+	deleteGroceryList(groceryList){
+		if (groceryList instanceof GroceryList){
+			this.groceryLists.pop(groceryList);
 		}
 		return this.groceryLists;
 	}
