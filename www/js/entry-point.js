@@ -13,12 +13,14 @@ $(function(){
 			my_collection.addGroceryList(gr_l);
 			$(".listNamePanel").html(listName_val)
 		}
+
+		$('#list_name').val('');
 		console.log("my_collection.groceryLists", my_collection.groceryLists);
 		my_collection.viewAllLists();
 	});
 
 	$('#add_item').on('click', '.addItem-btn', function(){	
-		let listName = $("#listNameP").text();
+		let listName = $("#listNameP").text();		
 		console.log('listName 1 = ', listName);
 		if($(item_name).val() !== "" && $(quantity).val() !== "" ){
 			let index = my_collection.indexByName(listName);
@@ -26,8 +28,12 @@ $(function(){
 						 "quantity = ", $(quantity).val(), "category = ", $(category).val() );
 			my_collection.groceryLists[index].addToList($(item_name).val(), Number($(quantity).val()), $(category).val());
 		}
+
+		$("#item_name").val('');
+		$("#quantity").val('');
 		console.log("my_collection.groceryLists 2 :", my_collection.groceryLists);
 		my_collection.viewAllLists();
+
 	});
 
 
