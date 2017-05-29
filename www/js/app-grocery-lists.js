@@ -22,8 +22,13 @@ class AppGroceryLists {
 	}
 
 	deleteGroceryList(groceryList){
-		if (groceryList instanceof GroceryList){
-			this.groceryLists.pop(groceryList);
+		if(!(groceryList instanceof GroceryList)){
+		      throw new Error("deleteGroceryList: input parameter should be GroceryList");
+		}
+		for(let list of this.groceryLists){
+		      if(list.name === groceryList.name){
+		        this.groceryLists.splice(this.groceryLists.indexOf(list),1);
+		    }
 		}
 		return this.groceryLists;
 	}
