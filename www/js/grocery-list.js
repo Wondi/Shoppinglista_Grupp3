@@ -192,7 +192,9 @@ class GroceryList {
     });
 
     $('#allItems .newItem').click(function(){
+
       window.location.hash ='#add_item';
+      that.showAllItems();
     });
 
     $('#allItems').on('click','.deleteItem',function(){

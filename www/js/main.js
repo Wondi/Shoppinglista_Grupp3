@@ -1,6 +1,14 @@
 // Test showAll
 
 let l = new GroceryList("Hepp");
+let l2 = new GroceryList("Måndag");
+let l3 = new GroceryList("tisdag");
+let l4 = new GroceryList("fredag");
+let myLists = new AppGroceryLists;
+myLists.addGroceryList(l);
+myLists.addGroceryList(l2);
+myLists.addGroceryList(l3);
+myLists.addGroceryList(l4);
 
 l.addToList("Bananer",2,"frukt");
 console.log("agorasmeno",l.items[0].bought);
@@ -12,5 +20,6 @@ l.buy("Äpplen");
 $(function(){
   l.showAllItems();
   l.showAllItems();
-  console.log("lista", l.unboughtItems());
+  myLists.viewAllLists();
 })
+
