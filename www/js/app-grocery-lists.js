@@ -42,7 +42,10 @@ class AppGroceryLists {
 	viewAllLists(){
 	    this.showTable(this.groceryLists);
 	    let that = this;
-		   
+		
+		// Unbind all previous click events on descendents of allItems;
+    	$('#all_list, #all_list *').unbind('click'); 
+    	  
 		$('#all_list .deleteList').click(function(){
 		console.log("Delete what item?");
 		let thisTr = $(this).closest('tr');
