@@ -12,7 +12,7 @@ class AppGroceryLists {
 	}
 
 	addGroceryList(groceryList){
-		if (groceryList instanceof GroceryList){
+		if (groceryList instanceof GroceryList && this.indexByName(groceryList.name) == -1){
 			this.groceryLists.push(groceryList);
 		}
 		else{
@@ -39,8 +39,9 @@ class AppGroceryLists {
 		return -1;
 	}
 	
-	viewAllLists(that){
-	    that.showTable(that.groceryLists);
+	viewAllLists(){
+	    this.showTable(this.groceryLists);
+	    let that = this;
 		   
 		$('#all_list .deleteList').click(function(){
 		console.log("Delete what item?");
@@ -49,15 +50,15 @@ class AppGroceryLists {
 		let index = $('tr').index(thisTr) - 1;
 		console.log("index for deleting", index);
 		that.groceryLists.splice(index,1);
-		that.viewAllLists(that);
+		that.viewAllLists();
 		});
 
 	}
 
-  	showTable(tblLists) {
+  	showTable() {
     	$("#all_list tbody").empty();
     	let counter = 1;
-    	for(let list of tblLists){
+    	for(let list of this.groceryLists){
 
      	 $('#all_list tbody').append(
 	          '<tr>' +

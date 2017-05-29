@@ -24,7 +24,7 @@ function readListNameCallback(){
 		$(".listNamePanel").html(listName_val)
 	}
 	console.log("my_collection.groceryLists", my_collection.groceryLists);
-	my_collection.viewAllLists(my_collection);
+	my_collection.viewAllLists();
 }
 
 function addItemCallback(){
@@ -37,7 +37,7 @@ function addItemCallback(){
 		my_collection.groceryLists[index].addToList($(item_name).val(), Number($(quantity).val()), $(category).val());
 	}
 	console.log("my_collection.groceryLists 2 :", my_collection.groceryLists);
-	my_collection.viewAllLists(my_collection);
+	my_collection.viewAllLists();
 }
 function viewAllItemsCallback(){
 	let listName = $("#listNameP").text();
