@@ -1,5 +1,5 @@
 // Test showAll
-
+/*
 let l = new GroceryList("Hepp");
 let l2 = new GroceryList("Måndag");
 let l3 = new GroceryList("tisdag");
@@ -23,3 +23,4 @@ $(function(){
   myLists.viewAllLists();
 })
 
+*/
