@@ -12,7 +12,7 @@ class AppGroceryLists {
 	}
 
 	addGroceryList(groceryList){
-		if (groceryList instanceof GroceryList && this.indexByName(groceryList.name) == -1){
+		if (groceryList instanceof GroceryList){
 			this.groceryLists.push(groceryList);
 		}
 		else{

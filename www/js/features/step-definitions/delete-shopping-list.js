@@ -10,14 +10,15 @@ defineSupportCode(function({Given, When, Then}) {
 
  	 Given('that I have a saved shopping list', function (callback) {
         theList = new AppGroceryLists();
-        theList.addGroceryList('Fredagsmys');
+        list= new GroceryList("Fredagsmys")
+        theList.addGroceryList(list);
         
          callback();
 
        });
 
  		When('I delete the shopping list from list of all shopping-lists', function (callback) {
-         	theList.deleteGroceryList('Fredagsmys');
+         	theList.deleteGroceryList(list);
          callback();
        
        });

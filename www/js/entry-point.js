@@ -43,7 +43,7 @@ function viewAllItemsCallback(){
 	let listName = $("#listNameP").text();
 	if(listName !== "" ){
 		let index = my_collection.indexByName(listName);
-		my_collection.groceryLists[index].showAllItems_my(my_collection.groceryLists[index]);
+		my_collection.groceryLists[index].showAllItems();
 	}
 }
 
