@@ -56,6 +56,18 @@ class AppGroceryLists {
 		that.viewAllLists();
 		});
 
+		$('#all_list .listname').click(function(){
+			console.log("Go to this list?");
+			let thisTr = $(this).closest('tr');
+			// what position does the tr have?
+			let index = $('tr').index(thisTr) - 1;
+			console.log("index for deleting", index);
+			let chosenList = that.groceryLists[index];
+			console.log("chosen list", chosenList);
+			chosenList.showAllItems();
+			window.location.hash ='#allItems';
+		});
+
 	}
 
   	showTable() {
@@ -66,7 +78,7 @@ class AppGroceryLists {
      	 $('#all_list tbody').append(
 	          '<tr>' +
 	          '<td>' + counter + '</td>' +
-	          '<td>' + list.name + '</td>' +
+	          '<td class="listname">' + list.name + '</td>' +
 	          '<td>' + list.totalItems + '</td>' +
 	          '<td>' + list.boughtItems().length + '</td>' +
 	          '<td><button class="btn btn-danger deleteList">Delete</button></td>' +
