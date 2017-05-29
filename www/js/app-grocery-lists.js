@@ -64,7 +64,7 @@ class AppGroceryLists {
 	          '<td>' + counter + '</td>' +
 	          '<td>' + list.name + '</td>' +
 	          '<td>' + list.totalItems + '</td>' +
-	          '<td>' + list.boughtItems().lenght + '</td>' +
+	          '<td>' + list.boughtItems().length + '</td>' +
 	          '<td><button class="btn btn-danger deleteList">Delete</button></td>' +
 	          '</tr>'
       		);

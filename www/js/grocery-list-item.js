@@ -18,7 +18,7 @@ class GroceryListItem {
       
   }
 
-  showText(){
+  get boughtText(){
     let text;
     if(this.bought===false){
       text="Unbought";

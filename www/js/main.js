@@ -1,5 +1,5 @@
 // Test showAll
-/*
+
 let l = new GroceryList("Hepp");
 
 l.addToList("Bananer",2,"frukt");
@@ -10,7 +10,7 @@ l.addToList("File", 5, "kött");
 l.buy("Äpplen");
 //wait for DOM
 $(function(){
-  l.showAllItems_my(l);
+  l.showAllItems();
+  l.showAllItems();
   console.log("lista", l.unboughtItems());
 })
-*/

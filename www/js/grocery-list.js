@@ -74,9 +74,7 @@ class GroceryList {
 
   sortItemsByCategory(){
     let sortedList = []; 
-    //slice() keeps the original list the same without 
-    //changing the order of the items
-    sortedList = this.items.slice().sort(function(a,b){
+    sortedList = this.items.sort(function(a,b){
       // if category is the same for both items
       // sort after name
       if(a.category === b.category){
@@ -90,9 +88,7 @@ class GroceryList {
 
   sortItemsByName(){
     let sortedList = []; 
-    //slice() keeps the original list the same without 
-    //changing the order of the items
-    sortedList = this.items.slice().sort(function(a,b){
+    sortedList = this.items.sort(function(a,b){
       // if item name is the same for both items
       // sort after category
       if(a.name === b.name){
@@ -162,82 +158,107 @@ class GroceryList {
 
   }*/ 
   //------- New functions there problem is fixed. Use these as tips, change showAllItems and delete these funcs
-  showAllItems_my(that){
-    console.log(that.name);
+  showAllItems(){
     
-    that.showTable(that.items);
-    $('#allItems .listName').html("List: "+ that.name);
+    this.showTable();
+
+    // Unbind all previous click events on descendents of allItems;
+    $('#allItems, #allItems *').unbind('click');
+
+    $('#allItems .listName').html("List: "+ this.name);
+   
+    let that = this; 
+
     $('#allItems .sortByName').click(function(){
-     // this = that;
-      console.log("sorted: ", that.sortItemsByName());
-      that.showTable(that.sortItemsByName());
+      that.sortItemsByName();
+      that.showTable();
     });
+
     $('#allItems .sortByCategory').click(function(){
-     // this = that;
-      console.log("sorted: ", that.sortItemsByCategory());
-      that.showTable(that.sortItemsByCategory());
+      that.sortItemsByCategory();
+      that.showTable();
     });
+    
     $('#allItems .onlyBought').click(function(){
-     // this = that;
-      console.log("filtered: ", that.boughtItems());
-      that.showTable(that.boughtItems());
+      that.showTable(true,false);
     });
+
     $('#allItems .onlyUnbought').click(function(){
-     // this = that;
-      console.log("filtered: ", that.unboughtItems());
-      that.showTable(that.unboughtItems());
+       that.showTable(false,true);
     });
+
     $('#allItems .originalList').click(function(){
-     // this = that;
-      console.log("filtered: ");
-      that.showAllItems_my(that);
+      that.showTable();
     });
+
     $('#allItems .newItem').click(function(){
-      window.location.href='#add_item';
+      window.location.hash ='#add_item';
     });
-    //--------------------
-    $('#allItems .deleteItem').click(function(){
-      console.log("Delete what item?");
-      // remember for this to work after sort
-      // stop slicing the sort - resort original!
-      let thisTr = $($(this).closest('tr'));
-      // what position does the tr have?
-      let index = $($('tr').index(thisTr)) - 1;
-      console.log(index)
+
+    $('#allItems').on('click','.deleteItem',function(){
+      let tr = $(this).closest('tr');
+      let index = tr.attr('item-index')/1;
       that.items.splice(index,1);
-      that.showTable(that.items);
+      that.showTable();
+    }); 
+
+    $('#allItems').on('click','.changeStatus',function(){
+      let tr = $(this).closest('tr');
+      let index = tr.attr('item-index')/1;
+      that.items[index].bought = $(this).text() !== 'Bought';
+      that.showTable();
     });
-    $('#allItems .changeStatus').click(function(){
-      let thisTr = $($(this).closest('tr'));
-      let index = $($('tr').index(thisTr)) - 1;
+
+
+    /*$('#allItems .changeStatus').click(function(){
+      let thisTr = $(this).closest('tr');
+      let index = $('tr').index(thisTr) - 1;
+      console.log("index", index);
       let indexListArray = index -1;
       let currentText;
-      let item=that.items[indexListArray];
-      $("#allItems tbody tr td").each(function() {
+      
+      $("#allItems tbody tr td").click(function() {
           currentText = $(this).text();
           if(currentText === "Unbought"){
             $(this).text("Bought");
-            item.bought=true;
+            console.log("object",that.items[0]);
+            console.log("index i lista",indexListArray);
+            console.log("real object",that.items[indexListArray]);
+            console.log("real object värde",that.items[indexListArray].bought);
+            //setTimeout(function(){ alert("Hello"); }, 1000);
+            that.items[indexListArray].bought = true;
+            console.log("real object changed värde",that.items[indexListArray].bought);
+
           }
           else if(currentText === "Bought"){
             $(this).text("Unbought");
-            item.bought=false;
+          //  item.bought=false;
+            console.log("object",that.items[1]);
+            console.log("index i lista",indexListArray);
+            console.log("real object",that.items[indexListArray]);
+            console.log("real object värde",that.items[indexListArray].bought);
+            that.items[indexListArray].bought = false;
+            console.log("real object changed värde",that.items[indexListArray].bought);
+
           }
       });
       console.log("the current text",currentText);
-    });     
+    });  */   
 
   }
   
-  showTable(tblItems) {
+  showTable(bought = true, unbought = true) {
     $("#allItems tbody").empty();
-    for(let item of tblItems){
+    for(let i = 0; i < this.items.length; i++){
+      let item = this.items[i];
+      if(item.bought && !bought){continue;}
+      if(!item.bought && !unbought){continue;}
       $('#allItems tbody').append(
-          '<tr>' +
+          '<tr item-index="' + i + '">' +
           '<td>' + item.name + '</td>' +
           '<td>' + item.quantity + '</td>' +
           '<td>' + item.category + '</td>' +
-          '<td><button class="btn btn-primary changeStatus">'+ item.showText() +'</button></td>' +
+          '<td><button class="btn btn-primary changeStatus">'+ item.boughtText +'</button></td>' +
           '<td><button class="btn btn-danger deleteItem">Delete</button></td>' +
           '</tr>'
       );
