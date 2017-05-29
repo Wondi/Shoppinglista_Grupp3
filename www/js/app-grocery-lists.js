@@ -68,6 +68,16 @@ class AppGroceryLists {
 			window.location.hash ='#allItems';
 		});
 
+		if(!window.hashChangeBoundForUpdates){
+			window.hashChangeBoundForUpdates = true;
+			$(window).bind('hashchange',function(){
+				if(location.hash=="#all_list"){
+					that.viewAllLists();
+				}
+			});
+		}
+		
+
 	}
 
   	showTable() {

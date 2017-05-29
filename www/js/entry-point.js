@@ -17,7 +17,7 @@ $(function(){
 		my_collection.viewAllLists();
 	});
 
-	$(add_item).on('click', '.addItem-btn', function(){	
+	$('#add_item').on('click', '.addItem-btn', function(){	
 		let listName = $("#listNameP").text();
 		console.log('listName 1 = ', listName);
 		if($(item_name).val() !== "" && $(quantity).val() !== "" ){
@@ -31,12 +31,19 @@ $(function(){
 	});
 
 
-	$(add_item).on('click',	'.view_list-btn', function(){
+	$('#add_item').on('click',	'.view_list-btn', function(){
 		let listName = $("#listNameP").text();
 		if(listName !== "" ){
 			let index = my_collection.indexByName(listName);
 			my_collection.groceryLists[index].showAllItems();
+
 		}
+	});
+
+	$('#all_list').on('click',	function(){
+		console.log("Hej hej hej, we are in all_list");
+		my_collection.viewAllLists();
+
 	});
 
 
