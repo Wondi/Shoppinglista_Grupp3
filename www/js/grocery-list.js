@@ -192,9 +192,7 @@ class GroceryList {
     });
 
     $('#allItems .newItem').click(function(){
-
       window.location.hash ='#add_item';
-      that.showAllItems();
     });
 
     $('#allItems').on('click','.deleteItem',function(){
@@ -211,6 +209,7 @@ class GroceryList {
       that.showTable();
     });
 
+     
 
     /*$('#allItems .changeStatus').click(function(){
       let thisTr = $(this).closest('tr');
@@ -248,6 +247,7 @@ class GroceryList {
     });  */   
 
   }
+
   
   showTable(bought = true, unbought = true) {
     $("#allItems tbody").empty();
