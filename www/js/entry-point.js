@@ -5,7 +5,16 @@ function activeList(){
 	$(".listNamePanel").html(listName_val);	
 }
 */
-
+function check(inputval){
+	let v = /^[0-9]+$/;
+	if (inputval.value.matches(v)){
+		return true;
+	else{
+		alert("Du måste ange quantity med en siffra!");
+		return false;
+	}
+	}
+}
 $(function(){
 	// This function will run when the DOM (the HTML) has been built
 	$('#create_new_shopping_list').on('click','.createBtn',function(){
@@ -31,14 +40,18 @@ $(function(){
 		console.log('listName 1 = ', listName);
 		let item_name = $('#item_name').val();
 		let quantity = $('#quantity').val();
+		let value = /^[0-9]+$/;
 
 		if(item_name === "" ){
+			console.log("item_name: ", item_name);
   			alert("Du måste ange item name");
   			return false;
 		}
-		if(quantity === "" ){
-  			alert("Du måste ange quantity");
-  			return false;
+
+		if(quantity === "" || quantity !== value){
+			console.log("Quantity: ", quantity);
+  			alert("Du måste ange quantity med en siffra!"); 
+  			return false;  			
 		}
 
 
