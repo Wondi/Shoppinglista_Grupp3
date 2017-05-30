@@ -16,7 +16,7 @@ module.exports = function () {
 
 	// scenario 2
 	
-	    this.When(/^I add (.*) item to the list$/, async function(numberOfItems) {
+	    this.When(/^I add (.*) item to the list$/, {timeout: 30000}, async function(numberOfItems) {
 	        console.log(numberOfItems);
 	        // add this number of items
 	        for(let i = 1; i <= numberOfItems; i++){
@@ -26,13 +26,13 @@ module.exports = function () {
 			}
 	    });
 
-	    this.Then(/^I should have (.*) item in my grocery list.$/, {timeout: 30000}, async function(numberOfItems) {
+	    this.Then(/^I should have (.*) item in my grocery list.$/,  async function(numberOfItems) {
 	        // make sure that have this number of items in the list
 	        // simulate that this step takes 20 seconds (ok because we set the max timeout to 30 seconds)
 			await driver.findElement(by.css(".view_list-btn")).click();
 	 		let trs = await driver.findElements(by.css('.table_items table tr'));
 			assert((trs.length - 1) === numberOfItems/1,"Not the correct number of items (" + numberOfItems + ")");
-	        await driver.sleep(20000);
+	       // await driver.sleep(20000);
 	    });
 
 };
