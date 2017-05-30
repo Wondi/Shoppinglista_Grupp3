@@ -10,9 +10,8 @@ module.exports = function () {
 		await driver.findElement(by.css(".addItem-btn")).click();
 	});
 
-	this.Then(/^I should get a runtime error.$/, async function(){
+	this.Then(/^I should get an alert.$/, async function(){
 		await driver.switchTo('alert');
-		// Rename this in Gherkin...
 	});
 
 	// scenario 2
