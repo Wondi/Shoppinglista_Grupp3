@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+    <testsuite name="adding-items-to-the-grocery-list;a-user-should-not-be-able-to-add-unnamed-items" tests="3" failures="0" skipped="3">
+        <properties>
+            <property name="URI" value="D:/Tanya/testautomation/GIT/Shoppinglista_Grupp3/selenium-tests/features/add-item.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have an empty grocery list" classname="adding-items-to-the-grocery-list;a-user-should-not-be-able-to-add-unnamed-items">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I try to add an item without a name" classname="adding-items-to-the-grocery-list;a-user-should-not-be-able-to-add-unnamed-items">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then I should get a runtime error." classname="adding-items-to-the-grocery-list;a-user-should-not-be-able-to-add-unnamed-items">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="adding-items-to-the-grocery-list;adding-an-item-to-an-empty-grocery-list" tests="4" failures="0" skipped="4">
+        <properties>
+            <property name="URI" value="D:/Tanya/testautomation/GIT/Shoppinglista_Grupp3/selenium-tests/features/add-item.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have an empty grocery list" classname="adding-items-to-the-grocery-list;adding-an-item-to-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I add 1 item to the list" classname="adding-items-to-the-grocery-list;adding-an-item-to-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then I should have 1 item in my grocery list." classname="adding-items-to-the-grocery-list;adding-an-item-to-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And the item should be a grocery list items." classname="adding-items-to-the-grocery-list;adding-an-item-to-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="adding-items-to-the-grocery-list;adding-an-item-to-an-empty-grocery-list" tests="4" failures="0" skipped="4">
+        <properties>
+            <property name="URI" value="D:/Tanya/testautomation/GIT/Shoppinglista_Grupp3/selenium-tests/features/add-item.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have an empty grocery list" classname="adding-items-to-the-grocery-list;adding-an-item-to-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I add 99 item to the list" classname="adding-items-to-the-grocery-list;adding-an-item-to-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then I should have 99 item in my grocery list." classname="adding-items-to-the-grocery-list;adding-an-item-to-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And the item should be a grocery list items." classname="adding-items-to-the-grocery-list;adding-an-item-to-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="adding-items-to-the-grocery-list;adding-an-item-to-an-empty-grocery-list" tests="4" failures="0" skipped="4">
+        <properties>
+            <property name="URI" value="D:/Tanya/testautomation/GIT/Shoppinglista_Grupp3/selenium-tests/features/add-item.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I have an empty grocery list" classname="adding-items-to-the-grocery-list;adding-an-item-to-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I add 1000 item to the list" classname="adding-items-to-the-grocery-list;adding-an-item-to-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then I should have 1000 item in my grocery list." classname="adding-items-to-the-grocery-list;adding-an-item-to-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And the item should be a grocery list items." classname="adding-items-to-the-grocery-list;adding-an-item-to-an-empty-grocery-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="create-1-or-more-shopping-lists.;a-user-should-be-able-to-create-a-shopping-list." tests="5" failures="0" skipped="5">
+        <properties>
+            <property name="URI" value="D:/Tanya/testautomation/GIT/Shoppinglista_Grupp3/selenium-tests/features/add-shopping-list.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I want to create a shopping list" classname="create-1-or-more-shopping-lists.;a-user-should-be-able-to-create-a-shopping-list.">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I create a new shopping list with a name" classname="create-1-or-more-shopping-lists.;a-user-should-be-able-to-create-a-shopping-list.">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then I should get an empty list." classname="create-1-or-more-shopping-lists.;a-user-should-be-able-to-create-a-shopping-list.">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And it should have the name that I gave it." classname="create-1-or-more-shopping-lists.;a-user-should-be-able-to-create-a-shopping-list.">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="And it should be stored in a list of all shopping-lists." classname="create-1-or-more-shopping-lists.;a-user-should-be-able-to-create-a-shopping-list.">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="create-1-or-more-shopping-lists.;a-user-should-not-be-able-to-add-unnamed-shopping-list" tests="3" failures="0" skipped="3">
+        <properties>
+            <property name="URI" value="D:/Tanya/testautomation/GIT/Shoppinglista_Grupp3/selenium-tests/features/add-shopping-list.feature">
+            </property>
+        </properties>
+        <testcase name="Given that I want to create an unnamed shopping list" classname="create-1-or-more-shopping-lists.;a-user-should-not-be-able-to-add-unnamed-shopping-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="When I try to create a shopping list without a name" classname="create-1-or-more-shopping-lists.;a-user-should-not-be-able-to-add-unnamed-shopping-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+        <testcase name="Then I should get a runtime error prevented addition an unnamed shopping list." classname="create-1-or-more-shopping-lists.;a-user-should-not-be-able-to-add-unnamed-shopping-list">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+</testsuites>

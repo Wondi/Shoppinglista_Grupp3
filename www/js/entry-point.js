@@ -1,8 +1,10 @@
 window.my_collection = new AppGroceryLists();
 
+/*
 function activeList(){
 	$(".listNamePanel").html(listName_val);	
 }
+*/
 
 $(function(){
 	// This function will run when the DOM (the HTML) has been built

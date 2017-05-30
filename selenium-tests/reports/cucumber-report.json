@@ -1,0 +1,363 @@
+[
+  {
+    "description": "\tAs a shopper\n\tI should be able to add named items to my grocery list\n\tso that I can remember to buy them.",
+    "elements": [
+      {
+        "id": "adding-items-to-the-grocery-list;a-user-should-not-be-able-to-add-unnamed-items",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "A user should not be able to add unnamed items",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "that I have an empty grocery list",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 7
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I try to add an item without a name",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 8
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should get a runtime error.",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 9
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 3824583826
+            },
+            "hidden": true,
+            "match": {
+              "location": "D:\\Tanya\\testautomation\\GIT\\Shoppinglista_Grupp3\\selenium-tests\\node_modules\\selenium-cucumber-js\\runtime\\world.js:185"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "id": "adding-items-to-the-grocery-list;adding-an-item-to-an-empty-grocery-list",
+        "keyword": "Scenario",
+        "line": 19,
+        "name": "Adding an item to an empty grocery list",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "that I have an empty grocery list",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 12
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I add 1 item to the list",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 13
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should have 1 item in my grocery list.",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 14
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "the item should be a grocery list items.",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 15
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 2674860095
+            },
+            "hidden": true,
+            "match": {
+              "location": "D:\\Tanya\\testautomation\\GIT\\Shoppinglista_Grupp3\\selenium-tests\\node_modules\\selenium-cucumber-js\\runtime\\world.js:185"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "id": "adding-items-to-the-grocery-list;adding-an-item-to-an-empty-grocery-list",
+        "keyword": "Scenario",
+        "line": 20,
+        "name": "Adding an item to an empty grocery list",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "that I have an empty grocery list",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 12
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I add 99 item to the list",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 13
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should have 99 item in my grocery list.",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 14
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "the item should be a grocery list items.",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 15
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 2674915529
+            },
+            "hidden": true,
+            "match": {
+              "location": "D:\\Tanya\\testautomation\\GIT\\Shoppinglista_Grupp3\\selenium-tests\\node_modules\\selenium-cucumber-js\\runtime\\world.js:185"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "id": "adding-items-to-the-grocery-list;adding-an-item-to-an-empty-grocery-list",
+        "keyword": "Scenario",
+        "line": 21,
+        "name": "Adding an item to an empty grocery list",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "that I have an empty grocery list",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 12
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I add 1000 item to the list",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 13
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should have 1000 item in my grocery list.",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 14
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "the item should be a grocery list items.",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 15
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 2681082640
+            },
+            "hidden": true,
+            "match": {
+              "location": "D:\\Tanya\\testautomation\\GIT\\Shoppinglista_Grupp3\\selenium-tests\\node_modules\\selenium-cucumber-js\\runtime\\world.js:185"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "adding-items-to-the-grocery-list",
+    "keyword": "Feature",
+    "line": 1,
+    "name": "Adding items to the grocery-list",
+    "tags": [],
+    "uri": "D:/Tanya/testautomation/GIT/Shoppinglista_Grupp3/selenium-tests/features/add-item.feature"
+  },
+  {
+    "description": "\t\t\t  As a shopper\n\t\t\t  I should be able to create 1 or more shopping lists\n\t\t\t  So that I can easily organize my shopping lists.",
+    "elements": [
+      {
+        "id": "create-1-or-more-shopping-lists.;a-user-should-be-able-to-create-a-shopping-list.",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "A user should be able to create a shopping list.",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "that I want to create a shopping list",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 7
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I create a new shopping list with a name",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 8
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should get an empty list.",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 9
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "it should have the name that I gave it.",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 10
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "it should be stored in a list of all shopping-lists.",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 11
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 2652135333
+            },
+            "hidden": true,
+            "match": {
+              "location": "D:\\Tanya\\testautomation\\GIT\\Shoppinglista_Grupp3\\selenium-tests\\node_modules\\selenium-cucumber-js\\runtime\\world.js:185"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "id": "create-1-or-more-shopping-lists.;a-user-should-not-be-able-to-add-unnamed-shopping-list",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "A user should not be able to add unnamed shopping list",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "that I want to create an unnamed shopping list",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 14
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I try to create a shopping list without a name",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 15
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should get a runtime error prevented addition an unnamed shopping list.",
+            "result": {
+              "status": "undefined"
+            },
+            "line": 16
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 2669882136
+            },
+            "hidden": true,
+            "match": {
+              "location": "D:\\Tanya\\testautomation\\GIT\\Shoppinglista_Grupp3\\selenium-tests\\node_modules\\selenium-cucumber-js\\runtime\\world.js:185"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "create-1-or-more-shopping-lists.",
+    "keyword": "Feature",
+    "line": 1,
+    "name": "Create 1 or more shopping lists.",
+    "tags": [],
+    "uri": "D:/Tanya/testautomation/GIT/Shoppinglista_Grupp3/selenium-tests/features/add-shopping-list.feature"
+  }
+]
