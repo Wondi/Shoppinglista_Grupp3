@@ -2,3 +2,5 @@ node_modules
 node_modules/*
 selenium-tests/node_modules
 selenium-tests/node_modules/*
+selenium-tests/reports
+selenium-tests/reports/*
