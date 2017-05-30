@@ -11,8 +11,8 @@ $(function(){
 			window.listName_val = $('#list_name').val(); 
 			let gr_l = new GroceryList(listName_val); 
 			my_collection.addGroceryList(gr_l);
-			//$(".listNamePanel").html(listName_val)
-			$(".itemList_name").html(listName_val)
+			$(".listNamePanel").html(listName_val)
+			//$(".itemList_name").html(listName_val)
 		}
 
 		$('#list_name').val('');
