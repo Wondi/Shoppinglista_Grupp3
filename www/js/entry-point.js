@@ -22,11 +22,27 @@ $(function(){
 	$('#add_item').on('click', '.addItem-btn', function(){	
 		let listName = $("#listNameP").text();		
 		console.log('listName 1 = ', listName);
+		let item_name = $('#item_name').val();
+		let quantity = $('#quantity').val();
+
+		if(item_name === "" ){
+  			alert("Du måste ange item name");
+  			return false;
+		}
+		if(quantity === "" ){
+  			alert("Du måste ange quantity");
+  			return false;
+		}
+
+
+		
 		if($(item_name).val() !== "" && $(quantity).val() !== "" ){
 			let index = my_collection.indexByName(listName);
+
 			console.log("listName = ", listName, "index = ", index, "item_name = ", $(item_name).val(),
 						 "quantity = ", $(quantity).val(), "category = ", $(category).val() );
-			my_collection.groceryLists[index].addToList($(item_name).val(), Number($(quantity).val()), $(category).val());
+			//my_collection.groceryLists[index].addToList($(item_name).val(), Number($(quantity).val()), $(category).val());
+			my_collection.groceryLists[index].addToList(item_name, Number(quantity), $(category).val());
 		}
 
 		$("#item_name").val('');
