@@ -70,6 +70,7 @@ class AppGroceryLists {
 			let chosenList = that.groceryLists[index];
 			console.log("chosen list", chosenList);
 			chosenList.showAllItems();
+			$(".listNamePanel").html(chosenList.name);
 			window.location.hash ='#allItems';
 		});
 
