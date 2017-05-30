@@ -10,46 +10,29 @@ module.exports = function () {
 		await driver.findElement(by.css(".addItem-btn")).click();
 	});
 
-	this.Then(/^I should get a runtime error.$/, async function(){
+	this.Then(/^I should get an alert.$/, async function(){
 		await driver.switchTo('alert');
-		// Rename this in Gherkin...
 	});
 
 	// scenario 2
+	
+	    this.When(/^I add (.*) item to the list$/, async function(numberOfItems) {
+	        console.log(numberOfItems);
+	        // add this number of items
+	        for(let i = 1; i <= numberOfItems; i++){
+		        await driver.findElement(by.css("#item_name")).sendKeys("Bananer "+ i);
+				await driver.findElement(by.css("#quantity")).sendKeys(i);
+				await driver.findElement(by.css(".addItem-btn")).click();
+			}
+	    });
 
-	for(itemNumber of [1,99,1000]){
+	    this.Then(/^I should have (.*) item in my grocery list.$/, {timeout: 30000}, async function(numberOfItems) {
+	        // make sure that have this number of items in the list
+	        // simulate that this step takes 20 seconds (ok because we set the max timeout to 30 seconds)
+			await driver.findElement(by.css(".view_list-btn")).click();
+	 		let trs = await driver.findElements(by.css('.table_items table tr'));
+			assert((trs.length - 1) === numberOfItems/1,"Not the correct number of items (" + numberOfItems + ")");
+	        await driver.sleep(20000);
+	    });
 
-		(()=>{
-			let numberOfItems = itemNumber;
-
-			this.When(new RegExp('^I add ' + numberOfItems +' item to the list$'), async function(){
-				for(let i = 1; i <= numberOfItems; i++){
-					await driver.findElement(by.css("#item_name")).sendKeys("Bananer " + i);
-					await driver.findElement(by.css("#quantity")).sendKeys(i);
-					await driver.findElement(by.css(".addItem-btn")).click();
-				}
-			});
-
-			this.Then(new RegExp('^I should have ' + numberOfItems +' item in my grocery list.$'), async function(){
-				await driver.findElement(by.css(".view_list-btn")).click();
-				let trs = await driver.findElements(by.css('.table_items table tr'));
-				/*let found = false;
-				for(let tr of trs){
-					let text = await tr.getText();
-					if(text.indexOf("Bananer")>=0 && text.indexOf("12")>=0){
-						found = true;
-						break;
-					}
-				}*/
-				assert(trs.length === numberOfItems + 1,"Not the correct number of items (" + numberOfItems + ")");
-			});
-
-
-		})();
-	}
-   
-   	this.Then(/^the item should be a grocery list items.$/, async function(){
-   			// How do we know????? Delete this step.
-	});
-  
 };
