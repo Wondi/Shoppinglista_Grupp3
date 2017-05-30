@@ -15,11 +15,14 @@ $(function(){
 			my_collection.addGroceryList(gr_l);
 			$(".listNamePanel").html(listName_val)
 			//$(".itemList_name").html(listName_val)
+			$('#list_name').val('');
+			console.log("my_collection.groceryLists", my_collection.groceryLists);
+			my_collection.viewAllLists();
 		}
-
-		$('#list_name').val('');
-		console.log("my_collection.groceryLists", my_collection.groceryLists);
-		my_collection.viewAllLists();
+		else{
+			alert("Du måste ange list name");
+			return false;
+		}
 	});
 
 	$('#add_item').on('click', '.addItem-btn', function(){	

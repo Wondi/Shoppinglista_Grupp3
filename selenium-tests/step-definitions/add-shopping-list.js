@@ -38,7 +38,19 @@ module.exports = function () {
 
   	});
 
+//scenario 2
+	this.Given(/^that I want to create an unnamed shopping list$/,async function(){
+		await helpers.loadPage("http://localhost:3000/#create_new_shopping_list");
+	});
 
+	this.When(/^I try to create a shopping list without a name$/, async function(){
+  		await driver.findElement(by.css("#list_name")).sendKeys("");
+		await driver.findElement(by.css(".createBtn")).click();
+	});
+
+	this.Then(/^I should get an alert prevented addition an unnamed shopping list.$/, async function(){
+		await driver.switchTo('alert');
+	});
 
   	
 	

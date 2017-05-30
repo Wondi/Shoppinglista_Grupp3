@@ -12,5 +12,5 @@ Feature: Create 1 or more shopping lists.
 		Scenario: A user should not be able to add unnamed shopping list
 			  Given that I want to create an unnamed shopping list
 			  When I try to create a shopping list without a name
-			  Then I should get a runtime error prevented addition an unnamed shopping list.
+			  Then I should get an alert prevented addition an unnamed shopping list.
 		
