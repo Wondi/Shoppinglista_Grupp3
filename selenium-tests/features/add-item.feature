@@ -16,7 +16,7 @@ Feature: Adding items to the grocery-list
     Examples:
       | itemsInList  |
       | 			1|
-      | 		   99|
-      |			   21|
+      | 		    5|
+      |			   15|
 
 
