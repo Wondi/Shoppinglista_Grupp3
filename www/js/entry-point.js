@@ -5,16 +5,6 @@ function activeList(){
 	$(".listNamePanel").html(listName_val);	
 }
 */
-function check(inputval){
-	let v = /^[0-9]+$/;
-	if (inputval.value.matches(v)){
-		return true;
-	else{
-		alert("Du måste ange quantity med en siffra!");
-		return false;
-	}
-	}
-}
 $(function(){
 	// This function will run when the DOM (the HTML) has been built
 	$('#create_new_shopping_list').on('click','.createBtn',function(){
@@ -38,32 +28,37 @@ $(function(){
 		let listName = $("#listNameP").text();
 
 		console.log('listName 1 = ', listName);
-		let item_name = $('#item_name').val();
-		let quantity = $('#quantity').val();
-		let value = /^[0-9]+$/;
 
-		if(item_name === "" ){
-			console.log("item_name: ", item_name);
-  			alert("Du måste ange item name");
-  			return false;
-		}
+			//		let value = /^[0-9]+$/;
 
-		if(quantity === "" || quantity !== value){
+		/*if(quantity === "" || quantity !== value){
 			console.log("Quantity: ", quantity);
   			alert("Du måste ange quantity med en siffra!"); 
   			return false;  			
+		}*/
+		let item_name = $("#item_name").val();
+		let quantity = $("#quantity").val();
+		let category = $("#category").val();
+		let index = my_collection.indexByName(listName);
+		try {
+			my_collection.groceryLists[index].addToList(item_name,quantity,category);
+		}
+		catch(e){
+			e += ""; // to string
+			if(e.indexOf("name that is an non-empty string")>=0){
+				e = "Du måste ge listan ett namn!";
+			}
+			// else if etc
+			alert(e);
 		}
 
-
-		
-		if($(item_name).val() !== "" && $(quantity).val() !== "" ){
+		/*if(item_name!== "" && quantity !== "" ){
 			let index = my_collection.indexByName(listName);
-
 			console.log("listName = ", listName, "index = ", index, "item_name = ", $(item_name).val(),
 						 "quantity = ", $(quantity).val(), "category = ", $(category).val() );
 			//my_collection.groceryLists[index].addToList($(item_name).val(), Number($(quantity).val()), $(category).val());
 			my_collection.groceryLists[index].addToList(item_name, Number(quantity), $(category).val());
-		}
+		}*/
 
 		$("#item_name").val('');
 		$("#quantity").val('');
