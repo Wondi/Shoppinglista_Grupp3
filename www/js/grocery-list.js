@@ -19,18 +19,18 @@ class GroceryList {
     this.totalItems = 0;
   }
 
-  addToList(itemName,itemQantity, itemCategory){
+  addToList(itemName,itemQuantity, itemCategory){
     if(typeof itemName !== "string" || itemName === ""){
       throw new Error("An item must have a name that is an non-empty string.");
     }
-    if(typeof itemQantity !== "number" || itemQantity === "" || itemQantity < 0 ){
-      throw new Error("A list item must have a quantity that is a number greater than or equal to 0 .");
+    if(typeof itemQuantity !== "number" || isNaN(itemQuantity) || itemQuantity <= 0 ){
+      throw new Error("A list item must have a quantity that is a number greater than 0 .");
     }
     if(typeof itemCategory !== "string" || itemCategory === ""){
       throw new Error("A list item must have a category that is an non-empty string.");
     }
     
-    this.items.push(new GroceryListItem(itemName, itemQantity, itemCategory));
+    this.items.push(new GroceryListItem(itemName, itemQuantity, itemCategory));
     this.totalItems++;
   }
 

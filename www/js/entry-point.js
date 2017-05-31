@@ -30,9 +30,10 @@ $(function(){
 		console.log('listName 1 = ', listName);
 
 		let item_name = $("#item_name").val();
-		let quantity = $("#quantity").val();
+		let quantity = $("#quantity").val()/1;
 		let category = $("#category").val();
 		let index = my_collection.indexByName(listName);
+		//my_collection.groceryLists[index].addToList(item_name,quantity,category);
 		try {
 			my_collection.groceryLists[index].addToList(item_name,quantity,category);
 		}
@@ -41,12 +42,19 @@ $(function(){
 			if(e.indexOf("name that is an non-empty string")>=0){
 				e = "Du måste ange item namn!";
 			}
-		 	else if (e.indexOf("a quantity that is a number greater than or equal to 0")>0){
-		 		e = "Du måste ange kvantitet med en siffra!";
+		 	else if (e.indexOf("a quantity that is a number greater than 0")>=0){
+		 		e = "Du måste ange kvantitet med en siffra större än 0!";
 		 	}
 			alert(e);
 		}
 
+		/*if(item_name!== "" && quantity !== "" ){
+			let index = my_collection.indexByName(listName);
+			console.log("listName = ", listName, "index = ", index, "item_name = ", $(item_name).val(),
+						 "quantity = ", $(quantity).val(), "category = ", $(category).val() );
+			//my_collection.groceryLists[index].addToList($(item_name).val(), Number($(quantity).val()), $(category).val());
+			my_collection.groceryLists[index].addToList(item_name, Number(quantity), $(category).val());
+		}*/
 
 		$("#item_name").val('');
 		$("#quantity").val('');
