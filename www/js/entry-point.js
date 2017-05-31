@@ -29,13 +29,6 @@ $(function(){
 
 		console.log('listName 1 = ', listName);
 
-			//		let value = /^[0-9]+$/;
-
-		/*if(quantity === "" || quantity !== value){
-			console.log("Quantity: ", quantity);
-  			alert("Du måste ange quantity med en siffra!"); 
-  			return false;  			
-		}*/
 		let item_name = $("#item_name").val();
 		let quantity = $("#quantity").val();
 		let category = $("#category").val();
@@ -46,19 +39,14 @@ $(function(){
 		catch(e){
 			e += ""; // to string
 			if(e.indexOf("name that is an non-empty string")>=0){
-				e = "Du måste ge listan ett namn!";
+				e = "Du måste ange item namn!";
 			}
-			// else if etc
+		 	else if (e.indexOf("a quantity that is a number greater than or equal to 0")>0){
+		 		e = "Du måste ange kvantitet med en siffra!";
+		 	}
 			alert(e);
 		}
 
-		/*if(item_name!== "" && quantity !== "" ){
-			let index = my_collection.indexByName(listName);
-			console.log("listName = ", listName, "index = ", index, "item_name = ", $(item_name).val(),
-						 "quantity = ", $(quantity).val(), "category = ", $(category).val() );
-			//my_collection.groceryLists[index].addToList($(item_name).val(), Number($(quantity).val()), $(category).val());
-			my_collection.groceryLists[index].addToList(item_name, Number(quantity), $(category).val());
-		}*/
 
 		$("#item_name").val('');
 		$("#quantity").val('');
