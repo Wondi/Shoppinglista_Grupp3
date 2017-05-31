@@ -107,6 +107,7 @@ class GroceryList {
     for(let item of this.items){
       if(item.name === itemName){
         this.items.splice(this.items.indexOf(item),1);
+        this.totalItems--;
       }
     }
   }
@@ -198,7 +199,8 @@ class GroceryList {
     $('#allItems').on('click','.deleteItem',function(){
       let tr = $(this).closest('tr');
       let index = tr.attr('item-index')/1;
-      that.items.splice(index,1);
+      //that.items.splice(index,1);
+      that.deleteItemFromList(that.items[index].name);
       that.showTable();
     }); 
 
